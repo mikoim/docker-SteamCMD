@@ -19,6 +19,4 @@ RUN mkdir "$STEAMCMD_ROOT" && \
 
 WORKDIR "$STEAMCMD_ROOT"
 
-ADD update_steam.txt "$STEAMCMD_ROOT"
-
-RUN ./steamcmd.sh +runscript update_steam.txt && rm update_steam.txt
+RUN echo "exit" > update_steam.txt && ./steamcmd.sh +runscript update_steam.txt && rm update_steam.txt
